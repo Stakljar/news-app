@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="news_card_height">280.dp</dimen>
+    <dimen name="icon_size">20.dp</dimen>
+    <dimen name="news_card_elevation">10.dp</dimen>
+    <dimen name="border_width">1.dp</dimen>
+    <dimen name="preference_card_height">420.dp</dimen>
+    <dimen name="preference_card_width">140.dp</dimen>
+    <dimen name="search_components_height">60.dp</dimen>
+    <dimen name="search_icon_width">40.dp</dimen>
+    <dimen name="topbar_height">50.dp</dimen>
+    <dimen name="dropdown_height">300.dp</dimen>
+</resources>
