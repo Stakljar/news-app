@@ -8,7 +8,14 @@ import agency.five.codebase.android.newsapp.ui.screens.search.mapper.SearchMappe
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.flatMapLatest
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
 class SearchViewModel(
@@ -43,6 +50,7 @@ class SearchViewModel(
     private val preferenceSavedViewState: StateFlow<PreferenceCardViewState> =
         _preferenceSavedViewState.asStateFlow()
 
+    @OptIn(ExperimentalCoroutinesApi::class)
     val newsViewState: StateFlow<NewsViewState> = preferenceSavedViewState.flatMapLatest {
         newsRepository.getNews(
             keyword = it.keyword,

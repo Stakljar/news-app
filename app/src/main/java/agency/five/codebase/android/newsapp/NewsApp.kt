@@ -1,9 +1,6 @@
 package agency.five.codebase.android.newsapp
 
-import agency.five.codebase.android.newsapp.modules.databaseModule
-import agency.five.codebase.android.newsapp.modules.networkModule
-import agency.five.codebase.android.newsapp.modules.newsRepositoryModule
-import agency.five.codebase.android.newsapp.modules.newsServiceModule
+import agency.five.codebase.android.newsapp.modules.*
 import agency.five.codebase.android.newsapp.modules.screens.*
 import android.app.Application
 import org.koin.android.ext.koin.androidContext

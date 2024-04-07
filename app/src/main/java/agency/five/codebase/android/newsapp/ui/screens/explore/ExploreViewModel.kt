@@ -5,7 +5,12 @@ import agency.five.codebase.android.newsapp.ui.screens.preferences.mapper.Prefer
 import agency.five.codebase.android.newsapp.ui.screens.search.mapper.SearchMapper
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.flatMapLatest
+import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.stateIn
 
 class ExploreViewModel(
     private val newsRepository: NewsRepository,
@@ -17,6 +22,7 @@ class ExploreViewModel(
         if(it!= null) preferencesMapper.toPreferenceCardViewState(it) else null
     }.stateIn(scope = viewModelScope, started = SharingStarted.WhileSubscribed(1000L), initialValue = null)
 
+    @OptIn(ExperimentalCoroutinesApi::class)
     val newsViewState =
         defaultPreferenceViewState.flatMapLatest {
             if(it != null) {

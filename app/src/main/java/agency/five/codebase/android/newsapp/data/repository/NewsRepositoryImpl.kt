@@ -6,7 +6,12 @@ import agency.five.codebase.android.newsapp.model.News
 import agency.five.codebase.android.newsapp.model.Preference
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.shareIn
 
 class NewsRepositoryImpl(
     private val preferencesDao: PreferencesDao,

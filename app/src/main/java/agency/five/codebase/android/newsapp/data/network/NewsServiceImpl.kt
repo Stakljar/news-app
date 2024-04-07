@@ -2,9 +2,9 @@ package agency.five.codebase.android.newsapp.data.network
 
 import agency.five.codebase.android.newsapp.data.network.mapper.UrlParamsMapper
 import agency.five.codebase.android.newsapp.data.network.model.NewsResponse
-import io.ktor.client.*
-import io.ktor.client.call.*
-import io.ktor.client.request.*
+import io.ktor.client.HttpClient
+import io.ktor.client.call.body
+import io.ktor.client.request.get
 
 private const val BASE_URL = "http://api.mediastack.com/v1/news"
 private const val API_KEY = "ee801628131adbccb05e6c549930e835"
