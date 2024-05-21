@@ -1,5 +1,5 @@
 # news-app
-App that enables you to search and browse various news and add preferences.
+Android app that enables you to search and browse various news and add preferences.
 
 Data used from [https://mediastack.com](https://mediastack.com).
 
